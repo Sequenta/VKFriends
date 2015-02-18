@@ -1,0 +1,3 @@
+[submodule "src/vk-windowsphone-sdk"]
+	path = src/vk-windowsphone-sdk
+	url = ../../VKCOM/vk-windowsphone-sdk.git

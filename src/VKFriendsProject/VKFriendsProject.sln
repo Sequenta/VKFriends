@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKFriendsProject", "VKFrien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKFriendsProject.Domain", "VKFriendsProject.Domain\VKFriendsProject.Domain.csproj", "{4209CD0B-F39F-4D5B-A558-4287AAB571CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKFriendsProject.Domain.Tests", "VKFriendsProject.Domain.Tests\VKFriendsProject.Domain.Tests.csproj", "{241982F5-103B-4D9A-BDB8-0F9274AA76BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VK.WindowsPhone.SDK", "..\vk-windowsphone-sdk\VK.WindowsPhone.SDK\VK.WindowsPhone.SDK.csproj", "{E700A31E-1BB7-4231-8790-91A75649009B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,30 @@ Global
 		{4209CD0B-F39F-4D5B-A558-4287AAB571CB}.Release|ARM.Build.0 = Release|ARM
 		{4209CD0B-F39F-4D5B-A558-4287AAB571CB}.Release|x86.ActiveCfg = Release|x86
 		{4209CD0B-F39F-4D5B-A558-4287AAB571CB}.Release|x86.Build.0 = Release|x86
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Debug|ARM.ActiveCfg = Debug|ARM
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Debug|ARM.Build.0 = Debug|ARM
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Debug|x86.ActiveCfg = Debug|x86
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Debug|x86.Build.0 = Debug|x86
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Release|ARM.ActiveCfg = Release|ARM
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Release|ARM.Build.0 = Release|ARM
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Release|x86.ActiveCfg = Release|x86
+		{241982F5-103B-4D9A-BDB8-0F9274AA76BA}.Release|x86.Build.0 = Release|x86
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Debug|ARM.Build.0 = Debug|ARM
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Debug|x86.ActiveCfg = Debug|x86
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Debug|x86.Build.0 = Debug|x86
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Release|ARM.ActiveCfg = Release|ARM
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Release|ARM.Build.0 = Release|ARM
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Release|x86.ActiveCfg = Release|x86
+		{E700A31E-1BB7-4231-8790-91A75649009B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
