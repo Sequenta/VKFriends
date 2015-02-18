@@ -84,6 +84,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IVkService.cs" />
+    <Compile Include="Services\VkService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\vk-windowsphone-sdk\VK.WindowsPhone.SDK\VK.WindowsPhone.SDK.csproj">

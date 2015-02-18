@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using VKFriendsProject.Domain.Services;
 using VKFriendsProject.Resources;
 
 namespace VKFriendsProject.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private IVkService vkService;
         public MainViewModel()
         {
             this.Items = new ObservableCollection<ItemViewModel>();
+            vkService = new VkService();
         }
 
         /// <summary>
@@ -60,6 +63,7 @@ namespace VKFriendsProject.ViewModels
         /// </summary>
         public void LoadData()
         {
+            vkService.GetFriendsInfo(1);
             // Sample data; replace with real data
             this.Items.Add(new ItemViewModel() { LineOne = "runtime one", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
             this.Items.Add(new ItemViewModel() { LineOne = "runtime two", LineTwo = "Dictumst eleifend facilisi faucibus", LineThree = "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus" });
