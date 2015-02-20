@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using AutoMapper;
 using VK.WindowsPhone.SDK;
 using VK.WindowsPhone.SDK.API;
 using VK.WindowsPhone.SDK.API.Model;
+using VKFriendsProject.Domain.Models;
 
 namespace VKFriendsProject.Domain.Services
 {
@@ -14,7 +17,7 @@ namespace VKFriendsProject.Domain.Services
         {
             VKSDK.Initialize(APPID);
         }
-        public void GetFriendsInfo(int userId)
+        public void GetFriendsInfo(int userId, Action<IEnumerable<FriendViewModel>> succcessCallbackFunction, Action<VkErrorResult> errorCallbackFunction)
         {
             var requestParameters = new VKRequestParameters("friends.get", new Dictionary<string, string>
             {
@@ -25,16 +28,25 @@ namespace VKFriendsProject.Domain.Services
             });
             VKRequest.Dispatch<VKList<VKUser>>(requestParameters, (result) =>
             {
+               
                 if (result.ResultCode == VKResultCode.Succeeded)
                 {
-                    var data = result.Data;
-                    data.items.ForEach(x => Debug.WriteLine("{0} {1} {2} {3}", x.photo_max, x.first_name, x.last_name, x.online));
+                    var friendsData = result.Data.items;
+                    if (friendsData != null)
+                    {
+                        var friends = friendsData.Select(Mapper.Map<FriendViewModel>);
+                        succcessCallbackFunction(friends);
+                    }
+                    else
+                    {
+                        succcessCallbackFunction(new List<FriendViewModel>());
+                    }
+                    //data.items.ForEach(x => Debug.WriteLine("{0} {1} {2} {3}", x.photo_max, x.first_name, x.last_name, x.online));
                 }
                 else
                 {
-                    var error = result.Error;
-                    var failureCode = result.ResultCode;
-                    Debug.WriteLine("{0} {1}", error != null ? error.error_msg : "Something went wrong", failureCode);
+                    var error = Mapper.Map<VkErrorResult>(result);
+                    errorCallbackFunction(error);
                 } 
             });
         }
