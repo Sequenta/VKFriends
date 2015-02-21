@@ -54,6 +54,11 @@ namespace VKFriendsProject
             webBrowserTask.Show();
         }
 
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            App.ViewModel.LoadData();
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{

@@ -73,6 +73,7 @@ namespace VKFriendsProject.ViewModels
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                Items.Clear();
                 foreach (var friend in friends)
                 {
                     Items.Add(friend);
