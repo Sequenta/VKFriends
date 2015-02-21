@@ -84,7 +84,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VKFriendsProject.Domain\VKFriendsProject.Domain.csproj">
