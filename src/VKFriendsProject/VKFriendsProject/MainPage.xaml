@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="clr-namespace:VKFriendsProject.Domain.Models;assembly=VKFriendsProject.Domain"
     xmlns:viewModels="clr-namespace:VKFriendsProject.ViewModels"
+    xmlns:converters="clr-namespace:VKFriendsProject.Converters"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -25,8 +26,12 @@
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Orientation="Horizontal" d:DataContext="{d:DesignInstance models:FriendViewModel}">
+                                <StackPanel.Resources>
+                                    <converters:VisibilityConverter x:Key="VisibilityConverter" />
+                                </StackPanel.Resources>
                                 <Image Source="{Binding Image}" Stretch="Uniform" Height="60" Width="60"/>
                                 <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <Image Visibility="{Binding Online, Converter={StaticResource VisibilityConverter}}" Source="Assets/Online.png" Stretch="Uniform" Width="9" Height="9" HorizontalAlignment="Right"></Image>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
