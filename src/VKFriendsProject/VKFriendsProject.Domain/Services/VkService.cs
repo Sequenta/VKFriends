@@ -22,7 +22,7 @@ namespace VKFriendsProject.Domain.Services
             var requestParameters = new VKRequestParameters("friends.get", new Dictionary<string, string>
             {
                  {"user_id",userId.ToString()},
-                 {"fields","online,photo_max"},
+                 {"fields","online,photo_max,domain"},
                  {"name_case","nom"}
             });
             VKRequest.Dispatch<VKList<VKUser>>(requestParameters, (result) =>

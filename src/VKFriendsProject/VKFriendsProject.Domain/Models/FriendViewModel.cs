@@ -8,6 +8,7 @@ namespace VKFriendsProject.Domain.Models
         private string fullName;
         private string image;
         private bool online;
+        private string url;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -45,6 +46,19 @@ namespace VKFriendsProject.Domain.Models
                 if (value != online)
                 {
                     online = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string Url
+        {
+            get { return url; }
+            set
+            {
+                if (value != url)
+                {
+                    url = value;
                     OnPropertyChanged();
                 }
             }

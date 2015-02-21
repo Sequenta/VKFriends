@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using AutoMapper;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
+using VKFriendsProject.Domain.Models;
 using VKFriendsProject.Domain.Profiles;
 using VKFriendsProject.Resources;
 
@@ -34,6 +36,18 @@ namespace VKFriendsProject
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        private void LongListSelector_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var selectedItem = ((LongListSelector)sender).SelectedItem;
+            var url = ((FriendViewModel)selectedItem).Url;
+
+            var webBrowserTask = new WebBrowserTask
+            {
+                Uri = new Uri(url, UriKind.Absolute)
+            };
+            webBrowserTask.Show();
         }
 
         // Sample code for building a localized ApplicationBar

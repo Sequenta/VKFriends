@@ -21,7 +21,7 @@
         <phone:Pivot Margin="0,23,0,-23">
             <!--Pivot item one-->
             <phone:PivotItem Header="друзья">
-                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding Items}" d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
+                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding Items}" d:DataContext="{d:DesignInstance viewModels:MainViewModel}" Tap="LongListSelector_Tap">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Orientation="Horizontal" d:DataContext="{d:DesignInstance models:FriendViewModel}">
