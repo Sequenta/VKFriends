@@ -67,7 +67,7 @@ namespace VKFriendsProject.ViewModels
         /// </summary>
         public void LoadData()
         {
-            vkService.GetFriendsInfo(18337037, PopulateData, HandleError);
+            vkService.GetFriendsInfo(216522287, PopulateData, HandleError);
         }
         private void PopulateData(IEnumerable<FriendViewModel> friends)
         {

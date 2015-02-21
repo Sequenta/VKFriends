@@ -25,14 +25,19 @@
                 <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding Items}" d:DataContext="{d:DesignInstance viewModels:MainViewModel}" Tap="LongListSelector_Tap">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Orientation="Horizontal" d:DataContext="{d:DesignInstance models:FriendViewModel}">
-                                <StackPanel.Resources>
+                            <Grid Margin="0,0,0,17"  d:DataContext="{d:DesignInstance models:FriendViewModel}">
+                                <Grid.Resources>
                                     <converters:VisibilityConverter x:Key="VisibilityConverter" />
-                                </StackPanel.Resources>
-                                <Image Source="{Binding Image}" Stretch="Uniform" Height="60" Width="60"/>
-                                <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <Image Visibility="{Binding Online, Converter={StaticResource VisibilityConverter}}" Source="Assets/Online.png" Stretch="Uniform" Width="9" Height="9" HorizontalAlignment="Right"></Image>
-                            </StackPanel>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Image}" Stretch="Uniform" Height="60" Width="60" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{Binding FullName}" Style="{StaticResource PhoneTextExtraLargeStyle}" Grid.Column="1"/>
+                                <Image Visibility="{Binding Online, Converter={StaticResource VisibilityConverter}}" Source="Assets/Online.png" Stretch="Uniform" Width="9" Height="9" HorizontalAlignment="Right" Grid.Column="2"></Image>
+                            </Grid>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
