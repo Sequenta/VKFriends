@@ -25,7 +25,7 @@
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Orientation="Horizontal" d:DataContext="{d:DesignInstance models:FriendViewModel}">
-                                <Image Source="{Binding Image}" Stretch="Uniform" Height="68" Width="64"/>
+                                <Image Source="{Binding Image}" Stretch="Uniform" Height="60" Width="60"/>
                                 <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                             </StackPanel>
                         </DataTemplate>
