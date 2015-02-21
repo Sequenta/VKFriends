@@ -1,13 +1,14 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="VKFriendsProject.MainPage"
+ x:Class="VKFriendsProject.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:VKFriendsProject.Domain.Models;assembly=VKFriendsProject.Domain"
+    xmlns:viewModels="clr-namespace:VKFriendsProject.ViewModels"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -20,13 +21,12 @@
         <phone:Pivot Margin="0,23,0,-23">
             <!--Pivot item one-->
             <phone:PivotItem Header="друзья">
-                <!--Double line list with text wrapping-->
-                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding Items}" d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Orientation="Horizontal">
-                                <Image Source="/Assets/IconWhite.png"/>
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                            <StackPanel Margin="0,0,0,17" Orientation="Horizontal" d:DataContext="{d:DesignInstance models:FriendViewModel}">
+                                <Image Source="{Binding Image}" Stretch="Uniform" Height="68" Width="64"/>
+                                <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
