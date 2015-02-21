@@ -22,7 +22,6 @@ namespace VKFriendsProject.Domain.Services
             var requestParameters = new VKRequestParameters("friends.get", new Dictionary<string, string>
             {
                  {"user_id",userId.ToString()},
-                 {"count","9"},
                  {"fields","online,photo_max"},
                  {"name_case","nom"}
             });
