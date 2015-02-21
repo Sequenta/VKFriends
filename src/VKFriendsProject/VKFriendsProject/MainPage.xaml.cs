@@ -5,8 +5,10 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using AutoMapper;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using VKFriendsProject.Domain.Profiles;
 using VKFriendsProject.Resources;
 
 namespace VKFriendsProject
@@ -20,7 +22,7 @@ namespace VKFriendsProject
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
-
+            Mapper.AddProfile<ModelsProfile>();
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
