@@ -41,6 +41,10 @@ namespace VKFriendsProject
         private void LongListSelector_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             var selectedItem = ((LongListSelector)sender).SelectedItem;
+            if (selectedItem == null)
+            {
+                return;
+            }
             var url = ((FriendViewModel)selectedItem).Url;
 
             var webBrowserTask = new WebBrowserTask
