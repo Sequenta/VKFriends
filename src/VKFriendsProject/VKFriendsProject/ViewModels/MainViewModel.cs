@@ -15,7 +15,7 @@ namespace VKFriendsProject.ViewModels
         private IVkService vkService;
         public MainViewModel()
         {
-            this.Items = new ObservableCollection<FriendViewModel>();
+            Items = new ObservableCollection<FriendViewModel>();
             vkService = new VkService();
         }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
@@ -83,9 +82,9 @@ namespace VKFriendsProject
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
             // Ensure that application state is restored appropriately
-            if (!App.ViewModel.IsDataLoaded)
+            if (!ViewModel.IsDataLoaded)
             {
-                App.ViewModel.LoadData();
+                ViewModel.LoadData();
             }
         }
 

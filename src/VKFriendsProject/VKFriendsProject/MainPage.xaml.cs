@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using AutoMapper;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using VKFriendsProject.Domain.Models;
 using VKFriendsProject.Domain.Profiles;
@@ -46,7 +43,7 @@ namespace VKFriendsProject
             }
         }
 
-        private void LongListSelector_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void LongListSelector_Tap(object sender, GestureEventArgs e)
         {
             var selectedItem = ((LongListSelector)sender).SelectedItem;
             if (selectedItem == null)
