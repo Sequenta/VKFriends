@@ -40,7 +40,6 @@ namespace VKFriendsProject.Domain.Services
                     {
                         succcessCallbackFunction(new List<FriendViewModel>());
                     }
-                    //data.items.ForEach(x => Debug.WriteLine("{0} {1} {2} {3}", x.photo_max, x.first_name, x.last_name, x.online));
                 }
                 else
                 {
