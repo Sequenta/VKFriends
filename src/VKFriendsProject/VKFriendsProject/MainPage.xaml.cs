@@ -36,6 +36,21 @@ namespace VKFriendsProject
             {
                 App.ViewModel.LoadData();
             }
+            HandleTheme();
+        }
+
+        private static void HandleTheme()
+        {
+            var isDarkTheme = (Visibility)Application.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible;
+
+            if (isDarkTheme)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         private void LongListSelector_Tap(object sender, System.Windows.Input.GestureEventArgs e)
